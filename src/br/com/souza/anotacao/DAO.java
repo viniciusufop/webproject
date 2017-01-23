@@ -19,4 +19,6 @@ import br.com.souza.dao.DaoFactory;
 public @interface DAO {
 	
 	public Class<DaoFactory> fabrica();
+	
+	public String entityManager();
 }

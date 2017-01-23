@@ -3,6 +3,7 @@
  */
 package br.com.souza.dao;
 
+import br.com.souza.dao.impl.AutorDaoImpl;
 import br.com.souza.dao.impl.BasicDaoImpl;
 import br.com.souza.entidades.BaseEntity;
 
@@ -45,5 +46,14 @@ public class DaoFactory {
 	 */
 	public BasicDao<BaseEntity> criarBasicDao(){
 		return new BasicDaoImpl<BaseEntity>(BaseEntity.class);
+	}
+	
+	/**
+	 * metodo para retornar object da interface AutorDao
+	 * 
+	 * @return AutorDao
+	 */
+	public AutorDao criarAutorDao(){
+		return new AutorDaoImpl();
 	}
 }

@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -20,16 +21,21 @@ import javax.persistence.Table;
 @Table(name = "book")
 public class Livro extends BaseEntity {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 22668082031329978L;
+
 	@Id
-	@GeneratedValue
-	@Column(name = "id")
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "id", insertable = false, updatable = false, nullable = false, unique =true)
 	private Integer identificador;
 	
-	@Column(name = "title")
+	@Column(name = "title", nullable = false, length = 150)
 	private String titulo;
 		
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name ="id_author", referencedColumnName = "id")
+	@JoinColumn(name ="id_author", referencedColumnName = "id", nullable = false)
 	private Autor autor;
 	
 	/**

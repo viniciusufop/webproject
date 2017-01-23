@@ -4,6 +4,7 @@
 package br.com.souza.dao;
 
 import java.io.Serializable;
+import java.util.List;
 
 import br.com.souza.entidades.BaseEntity;
 import br.com.souza.exception.WebProjectNegocialException;
@@ -29,5 +30,5 @@ public interface BasicDao<T extends BaseEntity> {
 	
 	T obter(Serializable chave) throws WebProjectNegocialException;
 	
-	//List<T> lista() throws WebProjectNegocialException;
+	List<T> listaEntity() throws WebProjectNegocialException;
 }

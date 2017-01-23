@@ -4,8 +4,10 @@
 package br.com.souza.dao.impl;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import br.com.souza.dao.BasicDao;
 import br.com.souza.entidades.BaseEntity;
@@ -92,6 +94,16 @@ public class BasicDaoImpl<T extends BaseEntity> implements BasicDao<T> {
 	@Override
 	public void deletar(Serializable chave) throws WebProjectNegocialException {
 		deletar(obter(chave));
+	}
+	
+	/* (non-Javadoc)
+	 * @see br.com.souza.dao.BasicDao#listaEntity()
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<T> listaEntity() throws WebProjectNegocialException {
+		Query query = em.createQuery("FROM "+classe.getSimpleName());
+		return query.getResultList();
 	}
 
 	/**
