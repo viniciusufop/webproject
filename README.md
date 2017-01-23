@@ -7,7 +7,7 @@ utilizando eles com padrões de projetos e injeção de dependecias
 para obtermos baixo acoplamento e alta coesão.
 
 Projeto web para auxiliar estudos de tecnologias, foi criado para
-executar com Java7, JBoss 7.1 e MySql. Dentro do projeto será dis-
-ponibilizado a pasta config com arquivos para configurações exter-
-nas ao projeto Java.
+executar com Java7, JBoss 7.1 e MySql. Dentro do projeto será 
+disponibilizado a pasta config com arquivos para configurações 
+externas ao projeto Java.
 
