@@ -1,0 +1,5 @@
+
+<!-- Informação abaixo deve ser inserida dentro do arquivo standalone.xml dentro da tag drivres para configurar o driver MySql-->
+<driver name="com.mysql" module="com.mysql">
+	<xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+</driver>
