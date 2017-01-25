@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<head>
+		<title>Bem vindo ao WebProject</title>
+	</head>
+	<body>
+		<h1>Início da Execução do projeto</h1>
+		<!--h:form>
+			<h:commandLink action="#{usuarioBean.novo}" >Criar Novo Usuario</h:commandLink><br/>
+			<h:commandLink action="login" >Logar com Usuario</h:commandLink><br/>
+			<h:commandLink action="#{questionarioBean.listarQuestionario}" >Listar Questionários Existentes</h:commandLink><br/>
+		</h:form-->
+		
+		<h:dataTable value="#{autorbean.listaAutores}" var="autor">
+			 <h:column>
+				<f:facet name="header">Identificador do Autor</f:facet>
+				#{autor.identificador}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Nome do Autor</f:facet>
+				#{autor.nome}
+			</h:column> 
+		</h:dataTable>
+	</body>
+</html>
