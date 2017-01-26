@@ -5,6 +5,8 @@
 	<context-param>
 	    <param-name>javax.faces.PROJECT_STAGE</param-name>
 	    <param-value>Development</param-value>
+	<param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name>
+  	<param-value>./WEB-INF/lib</param-value>
 	</context-param>	
 
 	<welcome-file-list>
