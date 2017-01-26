@@ -3,24 +3,35 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 	<head>
 		<title>Bem vindo ao WebProject</title>
 	</head>
 	<body>
-		<h1>Início da Execução do projeto</h1>
-		<!--h:form>
-			<h:commandLink action="#{usuarioBean.novo}" >Criar Novo Usuario</h:commandLink><br/>
-			<h:commandLink action="login" >Logar com Usuario</h:commandLink><br/>
-			<h:commandLink action="#{questionarioBean.listarQuestionario}" >Listar Questionários Existentes</h:commandLink><br/>
-		</h:form-->
+    <h3>GRID</h3>
+    <h:form id="idform1">
+    
+    	 <p:growl id="msgs" showDetail="true" />
+    
+		<p:tabView id="tabView" dynamic="true" cache="false" >
+			<p:tab id="Atores" title="Atores">Tab 1 Content</p:tab>
+			<p:tab id="Livros"  title="Livros">Tab 2 Content</p:tab>
+		</p:tabView>
+
+	</h:form>
 		
-		<h:dataTable value="#{autorbean.listaAutores}" var="autor">
-			 <h:column>
+		<h:form id="idform2">
+			<h:inputText id="nome_autor" value="#{autorbean.autor.nome}"  />
+			<h:commandButton id="botao_inclusao_autor" action="#{autorbean.gravarNovoAutor}" value="Inserir"/>
+		</h:form>
+		
+		<h:dataTable id="dataTable" value="#{autorbean.listaAutores}" var="autor">
+			 <h:column id="column1">
 				<f:facet name="header">Identificador do Autor</f:facet>
 				#{autor.identificador}
 			</h:column>
-			<h:column>
+			<h:column id="column2">
 				<f:facet name="header">Nome do Autor</f:facet>
 				#{autor.nome}
 			</h:column> 

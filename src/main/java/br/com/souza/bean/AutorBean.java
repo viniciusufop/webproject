@@ -32,11 +32,25 @@ public class AutorBean extends BaseBean {
 	
 	private List<Autor> listaAutores;
 	
+	private Autor autor;
+	
 	/**
 	 * consrutor
 	 */
 	public AutorBean() {
 		super();
+		autor = new Autor();
+	}
+	
+	/**
+	 * 
+	 */
+	public void gravarNovoAutor(){
+		try {
+			ejb.cadastrarAutor(autor);
+		} catch (WebProjectNegocialException e) {
+			getLogger().erro("Erro ao grava novo autor", e);
+		}
 	}
 
 	/**
@@ -56,5 +70,19 @@ public class AutorBean extends BaseBean {
 	 */
 	public void setListaAutores(List<Autor> listaAutores) {
 		this.listaAutores = listaAutores;
+	}
+
+	/**
+	 * @return the autor
+	 */
+	public Autor getAutor() {
+		return autor;
+	}
+
+	/**
+	 * @param autor the autor to set
+	 */
+	public void setAutor(Autor autor) {
+		this.autor = autor;
 	}
 }
